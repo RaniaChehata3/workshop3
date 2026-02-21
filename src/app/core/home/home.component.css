@@ -1,0 +1,32 @@
+.home-container {
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+.btn-go {
+  background: #3b82f6;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.btn-go:hover {
+  background: #2563eb;
+}

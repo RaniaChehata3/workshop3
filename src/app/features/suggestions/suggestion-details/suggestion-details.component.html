@@ -1,0 +1,31 @@
+<!-- On utilise found au lieu de *ngIf="suggestion" pour éviter l'erreur undefined -->
+<div class="detail-container" *ngIf="found; else notFound">
+
+  <button class="btn-back" (click)="goBack()">← Back to list</button>
+
+  <div class="detail-card">
+    <h2>{{ suggestion.title }}</h2>
+
+    <div class="meta">
+      <span class="category">{{ suggestion.category }}</span>
+      <span class="date">{{ suggestion.date | date: 'd MMM yyyy' }}</span>
+    </div>
+
+    <span class="badge" [ngClass]="suggestion.status">
+      {{ suggestion.status === 'acceptee' ? 'ACCEPTÉE' :
+         suggestion.status === 'refusee'  ? 'REFUSÉE'  : 'EN ATTENTE' }}
+    </span>
+
+    <p class="description">{{ suggestion.description }}</p>
+
+    <div class="likes">👍 <strong>{{ suggestion.nbLikes }}</strong> likes</div>
+  </div>
+
+</div>
+
+<ng-template #notFound>
+  <div class="detail-container">
+    <p>Suggestion introuvable.</p>
+    <button class="btn-back" (click)="goBack()">← Back to list</button>
+  </div>
+</ng-template>

@@ -1,0 +1,27 @@
+.notfound-container {
+  text-align: center;
+  padding: 100px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 900;
+  color: #ef4444;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  color: #64748b;
+  margin: 12px 0 28px;
+}
+
+.btn-back {
+  background: #1e293b;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
