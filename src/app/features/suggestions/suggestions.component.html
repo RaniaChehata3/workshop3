@@ -8,23 +8,26 @@
     class="search-bar"
   />
 
+  
+  <div style="margin-bottom: 20px;">
+    <button
+      (click)="goToForm()"
+      style="background-color: #00bcd4; color: white; padding: 10px 24px; border: none; border-radius: 6px; font-size: 15px; cursor: pointer;">
+      + Ajouter suggestion
+    </button>
+  </div>
+
   <div class="card" *ngFor="let suggestion of filteredSuggestions">
-
     <h3>{{ suggestion.title }}</h3>
-
     <div class="card-meta">
       <span class="category">{{ suggestion.category }}</span>
       <span class="date">{{ suggestion.date | date: 'd MMM yyyy' }}</span>
     </div>
-
     <p class="description">{{ suggestion.description }}</p>
-
     <span class="badge" [ngClass]="suggestion.status">
       {{ suggestion.status === 'acceptee' ? 'ACCEPTÉE' :
          suggestion.status === 'refusee'  ? 'REFUSÉE'  : 'EN ATTENTE' }}
     </span>
-
-    <!-- Boutons Like et Détails uniquement si NON refusée -->
     <div class="actions" *ngIf="suggestion.status !== 'refusee'">
       <button class="btn-like" (click)="onLike(suggestion)">
         👍 Like {{ suggestion.nbLikes }}
@@ -33,6 +36,5 @@
         ♡ Ajouter aux favoris
       </button>
     </div>
-
   </div>
 </div>

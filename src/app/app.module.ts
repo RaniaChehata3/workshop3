@@ -9,6 +9,9 @@ import { FooterComponent } from './core/footer/footer.component';
 import { ListSuggestionComponent } from './core/list-suggestion/list-suggestion.component';
 import { HomeComponent } from './core/home/home.component';
 import { NotfoundComponent } from './core/notfound/notfound.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SuggestionsModule } from './features/suggestions/suggestions.module';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { NotfoundComponent } from './core/notfound/notfound.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule  // ← ici
+    AppRoutingModule ,
+    ReactiveFormsModule ,
+    SuggestionsModule 
   ],
   bootstrap: [AppComponent]
 })

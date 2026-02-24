@@ -9,7 +9,6 @@ import { Suggestion } from '../../../models/suggestion';
 })
 export class SuggestionDetailsComponent implements OnInit {
 
-  // On initialise avec un objet vide pour éviter les erreurs "possibly undefined"
   suggestion!: Suggestion;
   found: boolean = true;
 

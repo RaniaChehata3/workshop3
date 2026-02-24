@@ -8,13 +8,19 @@
     class="search-bar"
   />
 
+<div style="margin-bottom: 20px;">
+  <button 
+    (click)="goToForm()" 
+    style="background-color: #00bcd4; color: white; padding: 10px 24px; border: none; border-radius: 6px; font-size: 15px; cursor: pointer;">
+    + Ajouter suggestion
+  </button>
+</div>
   <div class="card" *ngFor="let suggestion of filteredSuggestions">
 
     <div class="card-header">
       <h3>{{ suggestion.title }}</h3>
     </div>
 
-    <!-- Badge statut avec class dynamique -->
     <span class="badge" [class]="'badge ' + suggestion.status">
       {{ suggestion.status === 'acceptee' ? 'ACCEPTÉE' :
          suggestion.status === 'refusee'  ? 'REFUSÉE'  : 'EN ATTENTE' }}
@@ -27,8 +33,7 @@
 
     <p class="description">{{ suggestion.description }}</p>
 
-    <!-- NgIf : boutons masqués si refusée -->
-    <div class="actions" *ngIf="suggestion.status !== 'refusee'">
+*    <div class="actions" *ngIf="suggestion.status !== 'refusee'">
       <button class="btn-like" (click)="onLike(suggestion)">
         👍 Like {{ suggestion.nbLikes }}
       </button>
@@ -39,7 +44,6 @@
 
   </div>
 
-  <!-- Section favoris -->
   <div class="favorites-section" *ngIf="favorites.length > 0">
     <h2>⭐ Mes Favoris ({{ favorites.length }})</h2>
     <ul>
